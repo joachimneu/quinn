@@ -1,0 +1,25 @@
+[package]
+name = "quinn-hardudp"
+version = "0.1.0"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/quinn-rs/quinn"
+description = "UDP sockets with ECN information for the QUIC transport protocol"
+keywords = ["quic"]
+categories = ["network-programming", "asynchronous"]
+workspace = ".."
+edition = "2018"
+
+[package.metadata.docs.rs]
+all-features = true
+
+[badges]
+maintenance = { status = "experimental" }
+
+[dependencies]
+libc = "0.2.69"
+mio = { version = "0.8", features = ["net", "os-poll"] }
+proto = { package = "quinn-proto", path = "../quinn-proto", version = "0.8", default-features = false }
+socket2 = "0.4"
+tracing = "0.1.10"
+tokio = { version = "1.0.1", features = ["net"] }
+blake2 = { version = "0.10.4" }
